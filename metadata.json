@@ -1,0 +1,5 @@
+{
+  "name": "JIT-ERP-AI",
+  "description": "JIT-ERP Generator is an AI-powered engine that bridges the gap between business needs and enterprise software. It analyzes your plain-language problem description to architect a formal solution, then autonomously writes the full source code—frontend, backend, and database—complete with role-based access control and compliance standards. No waiting for IT tickets; just describe, review, and deploy.",
+  "requestFramePermissions": []
+}

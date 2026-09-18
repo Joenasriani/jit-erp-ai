@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ArrowLeftIcon, ClipboardIcon, DownloadIcon, RefreshCwIcon } from './Icons';
+import { ArrowLeftIcon, ClipboardIcon, RefreshCwIcon } from './Icons';
 
 interface CodeDisplayProps {
   codeFiles: Record<string, string>;
@@ -21,16 +21,12 @@ const CodeDisplay: React.FC<CodeDisplayProps> = ({ codeFiles, onRestart, onBack 
     }
   };
 
-  const handleDownloadZip = () => {
-    // This is a placeholder for a client-side zip generation library like JSZip
-    alert("Zip download functionality would require a library like JSZip. For now, please copy files individually.");
-  };
 
   return (
     <div className="animate-fade-in w-full">
       <div className="text-center mb-6">
-        <h2 className="text-3xl font-bold">Code Generation Complete</h2>
-        <p className="text-gray-400 mt-1">Review the generated files for your new micro-SaaS.</p>
+        <h2 className="text-3xl font-bold">Prototype Code Generated</h2>
+        <p className="text-gray-400 mt-1">Review each generated file before using it in an application.</p>
       </div>
       <div className="flex flex-col md:flex-row gap-6 h-[60vh] max-h-[700px]">
         {/* File Tree */}
@@ -61,9 +57,6 @@ const CodeDisplay: React.FC<CodeDisplayProps> = ({ codeFiles, onRestart, onBack 
                 <div className="flex gap-2">
                   <button onClick={handleCopy} className="flex items-center gap-1.5 text-sm px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors">
                     <ClipboardIcon className="w-4 h-4" /> {copyStatus}
-                  </button>
-                  <button onClick={handleDownloadZip} className="flex items-center gap-1.5 text-sm px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors">
-                     <DownloadIcon className="w-4 h-4" /> Zip
                   </button>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import type { UserInput } from '../types';
+import { BackendTech } from '../types';
 import { generateProblemCardServer } from '../server/gemini';
 
 const MAX_BODY_BYTES = 20_000;
@@ -19,6 +20,10 @@ function readBody(req: any): unknown {
   return req.body;
 }
 
+function isBackendTech(value: unknown): value is BackendTech {
+  return value === BackendTech.NESTJS || value === BackendTech.FASTAPI;
+}
+
 function isUserInput(value: any): value is UserInput {
   return (
     value &&
@@ -28,7 +33,7 @@ function isUserInput(value: any): value is UserInput {
     typeof value.painPoint === 'string' &&
     value.painPoint.trim().length > 0 &&
     value.painPoint.length <= 10_000 &&
-    typeof value.backendTech === 'string' &&
+    isBackendTech(value.backendTech) &&
     typeof value.userRoles === 'string' &&
     typeof value.compliance === 'string'
   );

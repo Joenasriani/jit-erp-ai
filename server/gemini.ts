@@ -191,10 +191,8 @@ Backend: FastAPI + SQLAlchemy
 
   const prompt = `Generate a reviewable prototype codebase from the problem card below.
 
-Problem card:
-```json
+Problem card JSON:
 ${JSON.stringify(card, null, 2)}
-```
 
 Technology:
 - Frontend: React + TypeScript + Tailwind CSS
@@ -212,11 +210,10 @@ Important boundaries:
 - Do not state that any compliance standard is satisfied or certified.
 - Include comments or TODOs where security, authentication, authorization, validation, audit logging or deployment work remains.
 
-Output each file as:
-`path/to/file`
-```language
-file contents
-```
+Output format:
+- For each generated file, put the file path on its own line wrapped in single backtick characters.
+- Immediately follow that line with a Markdown fenced code block containing the file contents.
+- Use the correct language identifier on each code fence.
 `;
 
   const response = await ai.models.generateContent({

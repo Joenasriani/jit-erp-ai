@@ -85,7 +85,7 @@ const ProblemInputForm: React.FC<ProblemInputFormProps> = ({ onAnalyze }) => {
           </div>
           <div>
             <label htmlFor="compliance" className="block text-sm font-medium text-gray-300 mb-1">
-              Compliance Standards (comma-separated)
+              Compliance Requirements to Consider
             </label>
             <input
               type="text"
@@ -93,7 +93,7 @@ const ProblemInputForm: React.FC<ProblemInputFormProps> = ({ onAnalyze }) => {
               id="compliance"
               value={formData.compliance}
               onChange={handleChange}
-              placeholder="e.g., GDPR, SOX"
+              placeholder="e.g., GDPR, SOX (if applicable)"
               className="w-full p-2 bg-gray-900 border border-gray-600 rounded-md focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 transition-colors text-gray-200"
             />
           </div>

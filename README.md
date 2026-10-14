@@ -87,3 +87,7 @@ No working public deployment was verified during the 2026-09-18 repository audit
 - Vite
 - Gemini API via `@google/genai`
 - Vercel-style serverless API functions
+
+Credit: Joe Nasr
+
+Portfolio: https://joe-nasr-signals.vercel.app/
